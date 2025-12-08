@@ -1,6 +1,6 @@
 /*
   Author: Nick Lockhart
-  Date: October 21, 2025
+  Date: Dec 8, 2025
   File: decisionTree.js
   Description: Interactive haircut recommendation 
 */

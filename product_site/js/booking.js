@@ -69,9 +69,6 @@ var msgEl = document.getElementById("confirmation-message");
 // ===============================
 // POP-UP MESSAGES (FOCUS EVENTS)
 // ===============================
-// ===============================
-// POP-UP MESSAGES (FOCUS EVENTS)
-// ===============================
 fullNameInput.addEventListener("focus", function() {
   helpEl.textContent = "Please enter your full name.";
 });
@@ -104,29 +101,42 @@ timeInput.addEventListener("focus", function() {
 // ===============================
 // VALIDATION (BLUR EVENTS)
 // ===============================
+
+function showError(message) {
+  msgEl.textContent = message;
+  msgEl.classList.add("error");   // red styling
+  msgEl.classList.remove("show"); // remove green fade-in class
+  msgEl.style.display = "block";  
+  msgEl.style.opacity = "1";      
+  msgEl.style.transform = "translateY(0)";
+}
+
+
 fullNameInput.addEventListener("blur", function() {
   if (fullNameInput.value.trim() === "") {
-    msgEl.textContent = "Error: Name cannot be blank.";
+    showError("Error: Name cannot be blank.");
   }
 });
 
 serviceInput.addEventListener("blur", function() {
   if (serviceInput.value === "") {
-    msgEl.textContent = "Error: You must choose a haircut.";
+    showError("Error: You must choose a haircut.");
   }
 });
 
 dayInput.addEventListener("blur", function() {
   if (dayInput.value === "") {
-    msgEl.textContent = "Error: Please select a day.";
+    showError("Error: Please select a day.");
   }
 });
 
 timeInput.addEventListener("blur", function() {
   if (timeInput.value === "") {
-    msgEl.textContent = "Error: Please choose a time.";
+    showError("Error: Please choose a time.");
   }
 });
+  
+
 
 // ===============================
 // BOOK BUTTON EVENT
@@ -142,7 +152,7 @@ document.getElementById("bookBtn").addEventListener("click", function() {
   var isMilitary = document.getElementById("militaryDiscount").checked;
 
   if (!name || !service || !day || !time) {
-    msgEl.textContent = "⚠️ Please fill out all fields before booking.";
+    showError("⚠️ Please fill out all fields before booking.");
     return;
   }
 
@@ -151,7 +161,8 @@ document.getElementById("bookBtn").addEventListener("click", function() {
     beardTrim, isStudent, isMilitary
   );
 
+  // SUCCESS MODE — GREEN MESSAGE
   msgEl.textContent = newBooking.confirmMessage();
-  msgEl.classList.add("show");
+  msgEl.classList.remove("error"); // remove red
+  msgEl.classList.add("show");     // trigger fade-in
 });
-

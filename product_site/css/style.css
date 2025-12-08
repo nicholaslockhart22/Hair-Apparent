@@ -1,6 +1,6 @@
 /* 
   Author: Nick Lockhart
-  Date: October 21, 2025
+  Date: Dec 8, 2025
   Description: Style.css – Hair Apparent website layout and responsive design.
 */
 
@@ -393,19 +393,23 @@ nav.explore-nav a.active {
   border-radius: 6px;
   font-weight: bold;
   color: #2e7d32;
+  display: none; /* hidden by default */
 }
 
-/* message fades in smoothly */
+/* Fade-in animation */
 #confirmation-message.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-
-/* Show it when text is added */
-#confirmation-message.show {
   display: block;
 }
+
+/* ---------- ERROR STYLE ---------- */
+#confirmation-message.error {
+  background-color: #ffebee;
+  border-left: 6px solid #c62828;
+  color: #c62828;
+}
+
 
 
 .help-box {

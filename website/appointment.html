@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hair Apparent Barbershop | Book Your Haircut &amp; Fade in Newport RI</title>
+  <meta name="description" content="Book your haircut or fade at Hair Apparent Barbershop in Newport RI. Choose from fades, crew cuts, buzz cuts, and beard trims. Try our haircut recommender below!">
+  <meta name="theme-color" content="#1a2e1a">
+  <meta property="og:title" content="Book Your Haircut | Hair Apparent Barbershop Newport RI">
+  <meta property="og:description" content="Fresh fades, crew cuts, and beard trims — book your appointment today at Hair Apparent Barbershop in Newport RI.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="Hair Apparent home">
+        <img src="images/logo.png" alt="" class="header-logo" width="48" height="48">
+        <span class="brand-name">Hair Apparent</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="appointment.html" class="active">Services</a>
+        <a href="hair.html">Hairstyles</a>
+      </nav>
+      <a href="appointment.html" class="header-cta">Book Now</a>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <h1 class="page-title">Book Your Hair Appointment</h1>
+    <p class="page-intro">
+      Welcome to <strong>Hair Apparent Barbershop</strong> — Newport's go-to spot for
+      <strong>fade haircuts</strong>, <strong>beard trims</strong>, and clean, modern styles.
+      Use our online booking system to reserve your haircut or stop by for a quick walk-in.
+    </p>
+
+    <section class="section">
+      <h2 class="section-title">Our Work</h2>
+      <img src="images/fade.jpg" alt="Man with fresh fade haircut at Hair Apparent Newport RI" class="float-left" width="220">
+      <img src="images/beardtrim.webp" alt="Professional beard trim example at Hair Apparent" class="float-right" width="220">
+      <p style="clear: both;">
+        From clean fades to full beard trims, our skilled barbers make sure you leave looking your best.
+        Every style is crafted with precision, care, and attention to detail.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Services &amp; Prices</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Standard Cut</td><td>$25</td></tr>
+            <tr><td>Fade Haircut</td><td>$30</td></tr>
+            <tr><td>Buzz Cut</td><td>$20</td></tr>
+            <tr><td>Beard Trim</td><td>$10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Book Your Appointment</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="service">Choose Your Haircut:</label>
+          <select id="service" name="service" required>
+            <option value="">-- Select a service --</option>
+            <option value="standard">Standard Cut ($25)</option>
+            <option value="fade">Fade Haircut ($30)</option>
+            <option value="buzz">Buzz Cut ($20)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="beardTrim"> Add Beard Trim (+$10)
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="studentDiscount"> Student Discount (10% off)
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="militaryDiscount"> Military Discount (10% off)
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="day">Choose a day:</label>
+          <select id="day" name="day" required>
+            <option value="">-- Select a day --</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="time">Choose a time:</label>
+          <select id="time" name="time" required>
+            <option value="">-- Select a time --</option>
+            <option>9:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fullname">First and Last Name:</label>
+          <input type="text" id="fullname" name="fullname" required maxlength="50">
+          <p id="help-message" class="help-box"></p>
+        </div>
+
+        <p id="confirmation-message"></p>
+        <button type="button" id="bookBtn" class="btn-primary">Book Appointment</button>
+      </form>
+    </section>
+
+    <section id="decision-section">
+      <h2 class="section-title">Find Your Perfect Haircut</h2>
+      <p>Answer a few quick questions to discover which haircut suits you best!</p>
+      <div id="decisionTree"></div>
+    </section>
+
+    <section id="loop-section">
+      <div id="loop-output1"></div>
+      <div id="loop-output2"></div>
+    </section>
+
+    <section class="video-section">
+      <h2 class="section-title">Watch a Barber in Action</h2>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/GsdbEmuYz-E"
+          title="Haircut tutorial video - fade haircut demonstration"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">Watch different 2025 hairstyles.</p>
+    </section>
+
+    <nav class="explore-nav" aria-label="Explore more pages">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="appointment.html" class="active">Services</a></li>
+        <li><a href="hair.html">Hairstyles</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hair Apparent Barbershop · Thames Street, Newport, RI · <a href="tel:+14011234567">(401) 123-4567</a></p>
+    <p>&copy; Hair Apparent. All rights reserved.</p>
+  </footer>
+
+  <script src="js/booking.js"></script>
+  <script src="js/decision.js" defer></script>
+
+</body>
+</html>
